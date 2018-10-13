@@ -1,6 +1,6 @@
 package misisonaries;
 
-import TreeGraphSearch.UninformedSearch;
+import TreeGraphSearch.*;
 import TreeGraphSearch.Node;
 import java.util.ArrayList;
 import java.util.List;
@@ -239,8 +239,8 @@ public class Misisonaries {
         OrderSensitiveComparableArrayList v_f = new OrderSensitiveComparableArrayList();
         v_f.add(b1_f);
         v_f.add(b2_f);
-        UninformedSearch ts = new UninformedSearch(is);
-        List<Node> path = ts.searchTree(v_f,"DFS");
+        UninformedSearch ts_dfs = new BFS(is);
+        List<Node> path = ts_dfs.searchTree(v_f);
         if (path == null) {
             System.out.println("Path is null");
             return;
