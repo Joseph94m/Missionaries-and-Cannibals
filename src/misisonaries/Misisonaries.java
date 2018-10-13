@@ -239,8 +239,8 @@ public class Misisonaries {
         OrderSensitiveComparableArrayList v_f = new OrderSensitiveComparableArrayList();
         v_f.add(b1_f);
         v_f.add(b2_f);
-        UninformedSearch ts_dfs = new BFS(is);
-        List<Node> path = ts_dfs.searchTree(v_f);
+        UninformedSearch ts_dfs = new BFS();
+        List<Node> path = ts_dfs.search(v_f,is);
         if (path == null) {
             System.out.println("Path is null");
             return;
