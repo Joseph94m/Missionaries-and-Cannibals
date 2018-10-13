@@ -240,7 +240,8 @@ public class Misisonaries {
         v_f.add(b1_f);
         v_f.add(b2_f);
         UninformedSearch ts_dfs = new BFS();
-        List<Node> path = ts_dfs.search(v_f,is);
+        List<Node> path = ts_dfs.search(v_f, is);
+        System.out.println("BFS Strategy");
         if (path == null) {
             System.out.println("Path is null");
             return;
@@ -250,5 +251,19 @@ public class Misisonaries {
             System.out.println(((List<Border>) n.getValue()).get(0) + " ---- " + ((List<Border>) n.getValue()).get(1));
         }
         System.out.println("");
+
+        ts_dfs = new DFS();
+        path = ts_dfs.search(v_f, is);
+        System.out.println("DFS Strategy");
+        if (path == null) {
+            System.out.println("Path is null");
+            return;
+        }
+        System.out.println("C M B ---- C M B");
+        for (Node n : path) {
+            System.out.println(((List<Border>) n.getValue()).get(0) + " ---- " + ((List<Border>) n.getValue()).get(1));
+        }
+        System.out.println("");
+
     }
 }
